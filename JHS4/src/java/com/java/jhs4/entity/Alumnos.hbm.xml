@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17/02/2016 10:28:01 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.java.jhs4.entity.Alumnos" table="ALUMNOS" schema="JA" optimistic-lock="version">
+        <id name="matricula" type="big_decimal">
+            <column name="MATRICULA" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="login" class="com.java.jhs4.entity.Login" fetch="select">
+            <column name="USUARIO" length="200" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="100" not-null="true" />
+        </property>
+        <property name="app" type="string">
+            <column name="APP" length="100" not-null="true" />
+        </property>
+        <property name="apm" type="string">
+            <column name="APM" length="100" not-null="true" />
+        </property>
+        <property name="edad" type="big_decimal">
+            <column name="EDAD" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="SEXO" length="50" not-null="true" />
+        </property>
+        <property name="fechaRegistro" type="date">
+            <column name="FECHA_REGISTRO" length="7" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

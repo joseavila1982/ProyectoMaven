@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17/02/2016 10:28:01 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.java.jhs4.entity.Login" table="LOGIN" schema="JA" optimistic-lock="version">
+        <id name="usuario" type="string">
+            <column name="USUARIO" length="200" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="200" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="200" />
+        </property>
+        <property name="edad" type="big_decimal">
+            <column name="EDAD" precision="22" scale="0" />
+        </property>
+        <property name="fecha" type="date">
+            <column name="FECHA" length="7" />
+        </property>
+        <property name="archivo" type="blob">
+            <column name="ARCHIVO" />
+        </property>
+        <property name="url" type="string">
+            <column name="URL" length="100" />
+        </property>
+        <set name="alumnoses" table="ALUMNOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="USUARIO" length="200" not-null="true" />
+            </key>
+            <one-to-many class="com.java.jhs4.entity.Alumnos" />
+        </set>
+    </class>
+</hibernate-mapping>

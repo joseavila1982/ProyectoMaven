@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17/02/2016 10:28:01 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.java.jhs4.entity.Articulos" table="ARTICULOS" schema="JA" optimistic-lock="version">
+        <id name="idArticulo" type="big_decimal">
+            <column name="ID_ARTICULO" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="200" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="200" />
+        </property>
+        <property name="costo" type="double">
+            <column name="COSTO" precision="126" scale="0" not-null="true" />
+        </property>
+        <property name="precio" type="double">
+            <column name="PRECIO" precision="126" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
