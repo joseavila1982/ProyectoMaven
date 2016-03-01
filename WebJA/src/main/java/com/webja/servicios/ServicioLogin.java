@@ -18,7 +18,7 @@ public class ServicioLogin implements IFaceLogin {
     
     @Override
     public Login validarLogin(Login obj) throws Exception {
-        ejb = (NegocioLogin) Utilidades.getEjbRemote("ejbLogin", NegocioLogin.class.getName());
+        ejb = (NegocioLogin) Utilidades.getEjbRemote("ejbLogin22", NegocioLogin.class.getName());
         return ejb.validarLogin(obj);
     }
     
