@@ -17,7 +17,7 @@ import javax.persistence.Query;
  *
  * @author JOSE
  */
-@Stateless(mappedName = "ejbLogin")
+@Stateless(mappedName = "ejbLogin22")
 public class SessionLogin implements NegocioLogin {
     @PersistenceContext(unitName="PersistenceJA")
     EntityManager em;
